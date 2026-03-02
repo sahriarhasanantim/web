@@ -1,217 +1,239 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahriar Hossain Antim | Personal Gallery</title>
+    <title>Sahriar Hossain Antim | Visionary Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Modern Premium Styles */
         :root {
-            --primary-color: #38bdf8;
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --text-gray: #94a3b8;
-        } 
-        body {
-            background-color: var(--bg-dark);
-            color: white;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            line-height: 1.6;
+            --accent: #38bdf8;
+            --bg-deep: #020617;
+            --glass-bg: rgba(30, 41, 59, 0.4);
+            --neon-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-deep);
+            background-image: radial-gradient(circle at top right, #1e293b, #020617);
+            color: #f1f5f9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
         }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
 
         /* Hero Section */
         header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px 0;
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
-            border-bottom: 1px solid #334155;
-            border-radius: 0 0 30px 30px;
         }
 
         .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 5px solid var(--primary-color);
+            border: 4px solid var(--accent);
+            padding: 8px;
+            transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            box-shadow: var(--neon-shadow);
+            margin-bottom: 25px;
         }
 
-        h1 { font-size: 2.5rem; margin: 15px 0 5px; color: var(--primary-color); }
-        .sub-headline { font-size: 1.1rem; color: var(--text-gray); font-style: italic; }
+        .profile-img:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.6);
+        }
 
-        .cta-buttons { margin-top: 20px; }
-        .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            margin: 5px;
-            border-radius: 50px;
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            margin: 0;
+            background: linear-gradient(to right, #ffffff, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .sub-headline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .btn-main {
+            padding: 16px 45px;
+            border-radius: 100px;
             text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .btn-primary { background: var(--primary-color); color: var(--bg-dark); }
-        .btn-outline { border: 1px solid var(--primary-color); color: var(--primary-color); }
-        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
-
-        /* Sections */
-        section {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            margin-top: 30px;
-            border: 1px solid #334155;
-        }
-
-        h2 { border-left: 4px solid var(--primary-color); padding-left: 15px; color: var(--primary-color); }
-
-        /* Gallery Grid */
-        .gallery-title { text-align: center; margin-top: 50px; font-size: 2rem; color: var(--primary-color); }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
+            font-weight: 700;
             transition: 0.4s;
-            cursor: pointer;
-            border: 1px solid #334155;
+            display: inline-block;
+            margin-top: 35px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);
         }
-        .gallery img:hover { transform: scale(1.03); border-color: var(--primary-color); }
 
-        /* Social Media Icons */
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(56, 189, 248, 0.5);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 100px 0;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 550px; /* ছবিগুলো অনেক বড় দেখাবে */
+            object-fit: cover;
+            border-radius: 30px;
+            transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+        }
+
+        /* Social Section */
+        .contact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 60px;
+            margin: 100px 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 20px;
+            gap: 40px;
+            margin-top: 40px;
         }
+
         .social-icons a {
-            font-size: 30px;
-            color: var(--text-gray);
-            transition: 0.3s;
-            text-align: center;
-            text-decoration: none;
+            color: #fff;
+            font-size: 40px;
+            transition: 0.4s;
+            opacity: 0.7;
         }
-        .social-icons a:hover { color: var(--primary-color); }
-        .social-icons span { display: block; font-size: 12px; margin-top: 5px; }
 
-        footer { text-align: center; padding: 40px; color: var(--text-gray); font-size: 14px; }
+        .social-icons a:hover {
+            color: var(--accent);
+            transform: translateY(-12px);
+            opacity: 1;
+        }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .gallery { grid-template-columns: repeat(1, 1fr); }
+        footer {
+            text-align: center;
+            padding: 50px 0;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-grid img { height: 450px; }
+            h1 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="https://i.ibb.co/YnXjRng/IMG-20260215-102021.jpg" alt="Sahriar Antim" class="profile-img">
-        <h1>Hi, I'm Sahriar Hossain Antim</h1>
-        <p class="sub-headline">A Creative Thinker | Aspiring Visionary | Lifelong Learner</p>
-        <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
-            <a href="#gallery" class="btn btn-outline">View My Work</a>
-        </div>
-    </header>
-
     <div class="container">
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a driven and curious individual who has recently completed my Higher Secondary Education (HSC). Rather than following the traditional path, my goal is to pursue 'something different'—to innovate, challenge the status quo, and leave a unique mark on the world. I believe that being a student isn't just about textbooks; it’s about the constant evolution of the mind and spirit.</p>
-        </section>
+        <header>
+            <img src="https://i.ibb.co/YnXjRng/IMG-20260215-102021.jpg" alt="Sahriar Antim" class="profile-img">
+            <h1>Sahriar Hossain Antim</h1>
+            <p class="sub-headline">Creative Thinker • Visionary Explorer • Digital Enthusiast</p>
+            <a href="#gallery" class="btn-main">My Photo Gallery</a>
+        </header>
 
-        <section id="education">
-            <h2>Education & Aspirations</h2>
-            <p><strong>Academic Status:</strong> Successfully completed the Pre-University/Higher Secondary level. Currently preparing for the next phase of my academic journey with a focus on specialized fields.</p>
-            <p><strong>The Goal:</strong> To merge my academic knowledge with creative thinking to build a career that is unconventional and impactful.</p>
-        </section>
-
-        <section id="hobbies">
-            <h2>My World (Hobbies & Interests)</h2>
-            <p>🎵 <strong>Music & Vocals:</strong> I don't just listen to music; I live it. Whether I'm discovering new genres or expressing myself through singing, music is my ultimate escape.</p>
-            <p>📸 <strong>Photography:</strong> I have an eye for detail. I love capturing the beauty of the world through my lens, freezing moments that tell a story.</p>
-            <p>📖 <strong>Reading:</strong> A dedicated reader who believes that every book is an opportunity to see the world from a different perspective.</p>
-            <p>✈️ <strong>Traveling:</strong> An explorer at heart. I thrive on visiting new places, experiencing diverse cultures, and finding inspiration in the unknown.</p>
-        </section>
-
-        <h2 class="gallery-title" id="gallery">Sahriar's Photo Gallery</h2>
-        <div class="gallery">
-            <img src="https://i.ibb.co/84jpmXWJ/Picsart-25-11-02-22-51-15-923.jpg">
-            <img src="https://i.ibb.co/rR0XHfSh/Picsart-25-10-27-12-31-00-384.jpg">
-            <img src="https://i.ibb.co/gM5K0GdN/Picsart-25-10-27-12-56-02-287.jpg">
-            <img src="https://i.ibb.co/hxVB2br6/Picsart-25-12-04-21-52-41-889.jpg">
-            <img src="https://i.ibb.co/fY4WYrF1/Picsart-25-11-02-22-39-03-977.jpg">
-            <img src="https://i.ibb.co/v6z1j1nP/Picsart-25-11-02-22-38-02-750.jpg">
-            <img src="https://i.ibb.co/W4jPvdkB/Picsart-25-11-02-22-45-20-935.jpg">
-            <img src="https://i.ibb.co/RkYg8MQx/Picsart-25-10-26-00-30-51-706.jpg">
-            <img src="https://i.ibb.co/23T6CCtB/Picsart-25-11-01-01-10-20-887.jpg">
-            <img src="https://i.ibb.co/7NgxCRK9/IMG-20260208-224245.jpg">
-            <img src="https://i.ibb.co/wrCnDqGz/Gemini-Generated-Image-ihonayihonayihon.png">
-            <img src="https://i.ibb.co/hRmTPgRg/IMG-20260222-151319.jpg">
-            <img src="https://i.ibb.co/277WFNGN/IMG-20260222-105723.jpg">
-            <img src="https://i.ibb.co/7xQ0fLS8/IMG-20260223-055200.jpg">
-            <img src="https://i.ibb.co/Wp0zg9dh/Picsart-26-02-26-11-04-24-748.jpg">
-            <img src="https://i.ibb.co/S47bHS8D/Picsart-26-02-26-10-51-31-055.jpg">
-            <img src="https://i.ibb.co/YFryKzpY/Picsart-26-02-24-14-14-12-719.jpg">
-            <img src="https://i.ibb.co/s9kRm78J/Picsart-26-02-23-14-39-20-566.jpg">
+        <div class="gallery-section" id="gallery">
+            <h2 class="gallery-title">Captured Moments</h2>
+            <div class="gallery-grid">
+                <img src="https://i.ibb.co/84jpmXWJ/Picsart-25-11-02-22-51-15-923.jpg">
+                <img src="https://i.ibb.co/rR0XHfSh/Picsart-25-10-27-12-31-00-384.jpg">
+                <img src="https://i.ibb.co/gM5K0GdN/Picsart-25-10-27-12-56-02-287.jpg">
+                <img src="https://i.ibb.co/hxVB2br6/Picsart-25-12-04-21-52-41-889.jpg">
+                <img src="https://i.ibb.co/fY4WYrF1/Picsart-25-11-02-22-39-03-977.jpg">
+                <img src="https://i.ibb.co/v6z1j1nP/Picsart-25-11-02-22-38-02-750.jpg">
+                <img src="https://i.ibb.co/W4jPvdkB/Picsart-25-11-02-22-45-20-935.jpg">
+                <img src="https://i.ibb.co/RkYg8MQx/Picsart-25-10-26-00-30-51-706.jpg">
+                <img src="https://i.ibb.co/23T6CCtB/Picsart-25-11-01-01-10-20-887.jpg">
+                <img src="https://i.ibb.co/7NgxCRK9/IMG-20260208-224245.jpg">
+                <img src="https://i.ibb.co/wrCnDqGz/Gemini-Generated-Image-ihonayihonayihon.png">
+                <img src="https://i.ibb.co/hRmTPgRg/IMG-20260222-151319.jpg">
+                <img src="https://i.ibb.co/277WFNGN/IMG-20260222-105723.jpg">
+                <img src="https://i.ibb.co/7xQ0fLS8/IMG-20260223-055200.jpg">
+                <img src="https://i.ibb.co/Wp0zg9dh/Picsart-26-02-26-11-04-24-748.jpg">
+                <img src="https://i.ibb.co/S47bHS8D/Picsart-26-02-26-10-51-31-055.jpg">
+                <img src="https://i.ibb.co/YFryKzpY/Picsart-26-02-24-14-14-12-719.jpg">
+                <img src="https://i.ibb.co/s9kRm78J/Picsart-26-02-23-14-39-20-566.jpg">
+            </div>
         </div>
 
-        <section id="contact">
-            <h2>Let’s Connect</h2>
-            <div style="margin-bottom: 20px;">
-                <p>📧 <strong>Email:</strong> sahriarantim@gmail.com</p>
-                <p>📍 <strong>Address:</strong> Gonderdiya, Monohardi, Narsingdi, Dhaka.</p>
-            </div>
-            
+        <div class="contact-card" id="contact">
+            <h2 style="font-size: 2.5rem; color: var(--accent);">Stay In Touch</h2>
+            <p style="color: #94a3b8; font-size: 1.1rem;">sahriarantim@gmail.com</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/sahriarantim" target="_blank">
-                    <i class="fab fa-facebook"></i><span>Profile</span>
-                </a>
-                <a href="https://www.facebook.com/Sahriarhassanantim" target="_blank">
-                    <i class="fab fa-facebook-f"></i><span>Page</span>
-                </a>
-                <a href="https://www.instagram.com/sahriarhassanantim" target="_blank">
-                    <i class="fab fa-instagram"></i><span>Instagram</span>
-                </a>
-                <a href="https://bd.linkedin.com/in/sahriar-antim-3464b13464b13b4" target="_blank">
-                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
-                </a>
+                <a href="https://www.facebook.com/sahriarantim" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/sahriarhassanantim" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://bd.linkedin.com/in/sahriar-antim-3464b13464b13b4" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
-        </section>
+        </div>
 
+        <footer>
+            <p>&copy; 2026 Sahriar Hossain Antim. Crafted with Innovation.</p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Sahriar Hossain Antim. All Rights Reserved.</p>
-    </footer>
 
     <script type="text/javascript">
     (function(d, m){
-        var kommunicateSettings = 
-        
-        {"appId":"2853755452f1b40212e3367807758367a","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var kommunicateSettings = {
+            "appId":"2853755452f1b40212e3367807758367a",
+            "popupWidget":true,
+            "automaticChatOpenOnNavigation":true
+        };
         var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
         var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
         window.kommunicate = m; m._globals = kommunicateSettings;
     })(document, window.kommunicate || {});
     </script>
-    
-</body>
+    </body>
 </html>
